@@ -1,0 +1,49 @@
+{
+  "name": "signal-chart",
+  "version": "0.1.0",
+  "description": "Draw a trade signal: candles with entry, stop loss and take profit levels, as SVG (no dependencies, Node and browser) or PNG, plus the same levels on lightweight charts.",
+  "type": "module",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
+    "./png": {
+      "types": "./png.d.ts",
+      "default": "./png.js"
+    }
+  },
+  "files": ["index.js", "index.d.ts", "png.js", "png.d.ts", "README.md", "LICENSE"],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test test/render.test.js",
+    "example": "node examples/build.mjs"
+  },
+  "peerDependencies": {
+    "@resvg/resvg-js": ">=2.4.0"
+  },
+  "peerDependenciesMeta": {
+    "@resvg/resvg-js": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2"
+  },
+  "keywords": ["trading", "forex", "signal", "chart", "candlestick", "svg", "png", "stop loss", "take profit", "entry", "lightweight-charts", "telegram"],
+  "homepage": "https://github.com/TradingSignalBot/signal-chart#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TradingSignalBot/signal-chart.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TradingSignalBot/signal-chart/issues"
+  },
+  "author": "TradingSignalBot (https://tradingsignalbot.com)",
+  "license": "MIT"
+}

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>signal-chart on lightweight charts</title>
+<style>body{margin:0;background:#0B0B0D}#chart{width:100vw;height:100vh}</style>
+</head>
+<body>
+<div id="chart"></div>
+<!-- Serve this folder's parent (e.g. `npx serve ..`) and open /examples/lightweight.html -->
+<script type="module">
+  import { createChart, CandlestickSeries } from 'https://esm.sh/lightweight-charts@5';
+  import { addSignalLevels, themes } from '../index.js';
+  import { sampleCandles, sampleSignal } from './sample.js';
+
+  const t = themes.dark;
+  const chart = createChart(document.getElementById('chart'), {
+    layout: { background: { color: t.background }, textColor: t.text },
+    grid: { vertLines: { color: t.grid }, horzLines: { color: t.grid } },
+    timeScale: { timeVisible: true },
+  });
+  const series = chart.addSeries(CandlestickSeries, {
+    upColor: t.up, downColor: t.down, wickUpColor: t.up, wickDownColor: t.down, borderVisible: false,
+  });
+  const candles = sampleCandles();
+  series.setData(candles.map(([time, open, high, low, close]) => ({ time, open, high, low, close })));
+  addSignalLevels(series, sampleSignal(candles));
+  chart.timeScale().fitContent();
+</script>
+</body>
+</html>
