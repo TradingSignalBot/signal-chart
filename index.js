@@ -2,7 +2,7 @@
  * signal-chart: candles with a trade's entry, stop and targets, drawn as SVG.
  *
  * Pure: no dependencies, no DOM, no clock. The same input always gives the
- * same SVG, in Node, Deno, Bun and browsers. For a PNG, see `signal-chart/png`.
+ * same SVG, in Node, Deno, Bun and browsers. For a PNG, see `trading-signal-chart/png`.
  * For a chart you already have on lightweight charts, see `addSignalLevels`.
  */
 

@@ -1,5 +1,5 @@
 /**
- * signal-chart/png: the same chart as a PNG, in Node.
+ * trading-signal-chart/png: the same chart as a PNG, in Node.
  *
  * Needs the optional peer dependency @resvg/resvg-js (`npm install @resvg/resvg-js`),
  * which rasterises the SVG with the system's fonts. Kept out of the main entry so

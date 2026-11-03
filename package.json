@@ -1,5 +1,5 @@
 {
-  "name": "signal-chart",
+  "name": "trading-signal-chart",
   "version": "0.1.0",
   "description": "Draw a trade signal: candles with entry, stop loss and take profit levels, as SVG (no dependencies, Node and browser) or PNG, plus the same levels on lightweight charts.",
   "type": "module",

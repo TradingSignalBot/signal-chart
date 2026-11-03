@@ -7,13 +7,13 @@ Draw a trade signal: candles with the entry, the stop loss and the take profit t
 <sub>The candles in the examples are a seeded random walk, not market data.</sub>
 
 ```sh
-npm install signal-chart
+npm install trading-signal-chart
 ```
 
 ## SVG
 
 ```js
-import { renderSvg } from 'signal-chart';
+import { renderSvg } from 'trading-signal-chart';
 
 const svg = renderSvg({
   candles,                      // [[time, open, high, low, close], ...] or [{ time, open, high, low, close }]
@@ -45,7 +45,7 @@ npm install @resvg/resvg-js
 ```
 
 ```js
-import { renderPng } from 'signal-chart/png';
+import { renderPng } from 'trading-signal-chart/png';
 import { writeFile } from 'node:fs/promises';
 
 await writeFile('signal.png', await renderPng({ candles, signal }, { scale: 2 }));
@@ -68,7 +68,7 @@ If you already draw candles with TradingView's [lightweight charts](https://gith
 
 ```js
 import { createChart, CandlestickSeries } from 'lightweight-charts';
-import { addSignalLevels } from 'signal-chart';
+import { addSignalLevels } from 'trading-signal-chart';
 
 const series = chart.addSeries(CandlestickSeries);   // v4: chart.addCandlestickSeries()
 series.setData(candles);
